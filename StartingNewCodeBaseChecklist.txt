@@ -1,0 +1,3 @@
+Use Git
+Automate the build
+Turn on all error messages
