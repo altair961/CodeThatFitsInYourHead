@@ -26,4 +26,4 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: build
-        run: dotnet build source
+        run: dotnet build Restaurant
