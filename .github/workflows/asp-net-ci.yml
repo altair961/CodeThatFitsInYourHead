@@ -18,7 +18,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: sources
-          path: source
+          path: Restaurant
 
       - name: install dotnet
         uses: actions/setup-dotnet@v1
