@@ -1,6 +1,7 @@
-Use Git
-Automate the build
-Turn on all error messages
-Treat warnings as errors both on debug and release
-CI build should work in Release mode
+Use Git.
+Automate the build.
+Turn on all error messages.
+Treat warnings as errors both on debug and release.
+CI build should work in Release mode.
 Automate deployment to some webserver. That would be your production environment.
+production/master (and not develop) branch should trigger CI.
