@@ -18,7 +18,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: sources
-          path: source
+          path: Restaurant
 
       - name: install dotnet
         uses: actions/setup-dotnet@v1
@@ -26,4 +26,17 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: build
-        run: dotnet build source
+        run: dotnet build Restaurant
+
+# run tests
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    
+      - uses: actions/download-artifact@v2
+        with:
+          name: sources
+      - run: dotnet build
+      - name: run tests for Api
+        run: dotnet test "Restaurant.RestApi.Tests/Restaurant.RestApi.Tests.csproj" --no-build --no-restore
