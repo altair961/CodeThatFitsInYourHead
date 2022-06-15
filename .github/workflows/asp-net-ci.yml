@@ -27,3 +27,16 @@ jobs:
 
       - name: build
         run: dotnet build Restaurant
+
+# run tests
+  tests:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    
+      - uses: actions/download-artifact@v2
+        with:
+          name: sources
+      - run: dotnet build
+      - name: run tests for Api
+        run: dotnet test "Restaurant.RestApi.Tests/Restaurant.RestApi.Tests.csproj" --no-build --no-restore
