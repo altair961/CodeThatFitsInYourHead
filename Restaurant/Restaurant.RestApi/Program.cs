@@ -21,8 +21,11 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
-
-    List<int> l;
+#if DEBUG
+    List<int> d;
+#else
+    List<int> r; 
+#endif
 
     var forecast = Enumerable.Range(1, 5).Select(index =>
        new WeatherForecast
