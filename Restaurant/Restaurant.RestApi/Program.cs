@@ -21,6 +21,9 @@ var summaries = new[]
 
 app.MapGet("/weatherforecast", () =>
 {
+
+    List<int> l;
+
     var forecast = Enumerable.Range(1, 5).Select(index =>
        new WeatherForecast
        (
@@ -37,5 +40,6 @@ app.Run();
 
 internal record WeatherForecast(DateTime Date, int TemperatureC, string? Summary)
 {
+
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 }
