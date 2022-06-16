@@ -5,3 +5,4 @@ Treat warnings as errors both on debug and release.
 CI build should work in Release mode.
 Automate deployment to some webserver. That would be your production environment.
 production/master (and not develop) branch should trigger CI.
+Enable static code analysers (linters). They will force style rules.
