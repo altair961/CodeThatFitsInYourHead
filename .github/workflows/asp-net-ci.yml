@@ -6,36 +6,15 @@ on:
       - develop
 
 jobs:
-
-  # run build
-  build:
-    runs-on: ubuntu-latest
+  run_tests:
+    runs-on: ubuntu-20.04
     steps:
-    
-      - name: get sources
-        uses: actions/checkout@master
-        
-      - uses: actions/upload-artifact@v2
-        with:
-          name: sources
-          path: Restaurant
-
-      - name: install dotnet
-        uses: actions/setup-dotnet@v1
-        with:
-          dotnet-version: '6.0.x'
-
-      - name: make build script runnable
-        run:
-# make file runnable, might not be necessary
-          chmod +x "${GITHUB_WORKSPACE}/build.sh"
-      - name: execute build script
-        run:
-# run script
-        "${GITHUB_WORKSPACE}/build.sh"
-    # or
-    #"${{ format('{0}/.github/script.sh', github.workspace) }}"
-
+    - uses: actions/checkout@v2
+    - name: Run script file
+      run: |
+         chmod +x ./public/scripts/test.sh
+         ./public/scripts/test.sh
+      shell: bash
 # run tests
   tests:
     needs: build
