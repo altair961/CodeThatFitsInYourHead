@@ -20,8 +20,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <PropertyGroup>
-    <AnalysisMode>All</AnalysisMode>
-  </PropertyGroup>
-
 </Project>
